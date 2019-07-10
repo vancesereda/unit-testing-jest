@@ -1,0 +1,25 @@
+import React from 'react';
+
+export default class MyComponent extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state={
+            isShown: true,
+        }
+    }
+
+    toggleIsShown = () => {
+        this.setState({isShown: !this.state.isShown});
+    }
+
+    render() {
+        const {isShown} = this.state;
+        return(
+            <div>
+                <button onClick={this.toggleIsShown}>Toggle</button>
+                {isShown && <div>Text goes here</div>}
+                
+            </div>
+        )
+    }
+}
